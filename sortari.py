@@ -45,11 +45,11 @@ def interclasare(lista,inc,sf):
         indice_copie += 1
         j += 1
     lista[inc:sf+1]=copie
-def divide(lista,inc,sf):
+def mergeSort(lista,inc,sf):
     if inc<sf:
         mijloc=(inc+sf)//2
-        divide(lista,inc,mijloc)
-        divide(lista,mijloc+1,sf)
+        mergeSort(lista,inc,mijloc)
+        mergeSort(lista,mijloc+1,sf)
         interclasare(lista,inc,sf)
 # lista=[7,2,3,9,4,178,0,2,2,2]
 # print(lista)
@@ -84,3 +84,74 @@ def radixSort(lista,nr_max,baza):
             v_frecv[index%baza] -= 1
             lista[v_frecv[index%baza]] = copie[j]
         i+=1
+
+
+def shellSort2(lista):
+    lungime = len(lista)
+    gap=lungime//2
+    while gap>0:
+        for i in range(gap, lungime):
+            for j in range(i-gap,-1,-gap):
+                if lista[j+gap]<lista[j]:
+                    lista[j+gap],lista[j]=lista[j],lista[j+gap]
+                else:
+                    break
+        gap//=2
+
+
+
+def findSwap(inc,lungime,lista,gap):
+    for i in range(inc,lungime):
+        if lista[i-gap]>lista[i] and i-gap>=0:
+            lista[i - gap],lista[i]=lista[i],lista[i-gap]
+            findSwap(i-gap,lungime,lista,gap)
+def shellSort1(lista):
+    lungime=len(lista)
+    gap=lungime//2
+    while gap>0:
+        findSwap(gap,lungime,lista,gap)
+        gap//=2
+
+#neeficienta
+
+
+def heapSort2(lista,nr_elem):
+    while nr_elem>0:
+        for inc in range(nr_elem//2-1,-1,-1):
+            i=inc
+            nodul_stang=inc*2+1
+            nodul_drept=inc*2+2
+            if nodul_stang<nr_elem and lista[i]<lista[nodul_stang]:
+                i=nodul_stang
+            if nodul_drept<nr_elem and lista[i]<lista[nodul_drept] :
+                i=nodul_drept
+            if i!=inc:
+                lista[i], lista[inc] = lista[inc], lista[i]
+        if lista[0]!=lista[nr_elem-1]:
+            lista[0],lista[nr_elem-1]=lista[nr_elem-1],lista[0]
+        nr_elem-=1
+
+
+
+
+
+def heapify(lista, n, i):
+    inc = i
+    left_node = 2 * i + 1
+    right_node = 2 * i + 2
+    if left_node < n and lista[i] < lista[left_node]:
+        inc = left_node
+    if right_node < n and lista[inc] < lista[right_node]:
+        inc = right_node
+    if inc != i:
+        (lista[i], lista[inc]) = (lista[inc], lista[i])
+        heapify(lista, n, inc)
+
+def heapSort(lista):
+    n = len(lista)
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(lista, n, i)
+    for i in range(n - 1, 0, -1):
+        (lista[i], lista[0]) = (lista[0], lista[i])
+        heapify(lista, i, 0)
+#mai eficienta
