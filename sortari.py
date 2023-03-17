@@ -1,3 +1,9 @@
+def functie_verif_sortat(lista):
+    for i in range(1,len(lista)):
+        if lista[i-1]>lista[i]:
+            return False
+    return True
+
 def counting_sort(lista,nr_max):
     v_frecventa=[0]*(nr_max+1)
     for element in lista:
@@ -21,21 +27,14 @@ def interclasare(lista,inc,sf):
     mijloc=(inc+sf)//2
     j=mijloc+1
     indice_copie=0
-    while i<=mijloc and j<=sf:
-        if lista[i]<lista[j]:
-            copie[indice_copie]=lista[i]
-            indice_copie+=1
-            i+=1
-        elif lista[i]>lista[j]:
-            copie[indice_copie] = lista[j]
-            indice_copie += 1
-            j += 1
-        else:
+    while i <= mijloc and j <= sf:
+        if lista[i] < lista[j]:
             copie[indice_copie] = lista[i]
             indice_copie += 1
+            i += 1
+        else:
             copie[indice_copie] = lista[j]
             indice_copie += 1
-            i += 1
             j += 1
     while i <= mijloc:
         copie[indice_copie] = lista[i]
@@ -65,3 +64,23 @@ def divide(lista,inc,sf):
 # print(lista2)
 # divide(lista2,0,len(lista2)-1)
 # print(lista2)
+
+
+def radixSort(lista,nr_max,baza):
+    i=0
+    lungime=len(lista)
+    poz=1
+    while nr_max//(poz*baza)>0:
+        v_frecv=[0]*baza
+        poz=baza**i
+        for j in range(lungime):
+            index=lista[j]//poz
+            v_frecv[index%baza]+=1
+        for j in range(1,baza):
+            v_frecv[j]+=v_frecv[j-1]
+        copie = lista.copy()
+        for j in range(lungime-1,-1,-1):
+            index=copie[j]//poz
+            v_frecv[index%baza] -= 1
+            lista[v_frecv[index%baza]] = copie[j]
+        i+=1
