@@ -89,3 +89,19 @@ with open('input.txt') as f:
             print('Timp:', timp_final, 'seconds =', round(float(timp_final) / 60, 10), 'minutes\n')
         except:
             print("Heap sort nu a putut sorta")
+
+        try:
+            copie = random_list.copy()
+            timp_start = time.perf_counter()
+            copie.sort()
+            timp_final = time.perf_counter() - timp_start
+            print('Python sort method:', end=' ')
+            if sorting.functie_verif_sortat(copie) == True:
+                print('Vectorul a fost sortat')
+            else:
+                print('Vectorul nu a fost sortat')
+            timp_final = round(float('{:.10f}'.format(float(timp_final))), 10)
+            print('Timp:', timp_final, 'seconds =', round(float(timp_final) / 60, 10), 'minutes\n')
+        except:
+            print("Heap sort nu a putut sorta")
+
