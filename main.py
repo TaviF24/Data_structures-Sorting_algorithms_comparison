@@ -103,5 +103,5 @@ with open('input.txt') as f:
             timp_final = round(float('{:.10f}'.format(float(timp_final))), 10)
             print('Timp:', timp_final, 'seconds =', round(float(timp_final) / 60, 10), 'minutes\n')
         except:
-            print("Heap sort nu a putut sorta")
+            print("Python sort method nu a putut sorta")
 
