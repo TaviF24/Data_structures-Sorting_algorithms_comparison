@@ -66,6 +66,19 @@ def radixSort(lista,nr_max,baza):
             lista[v_frecv[index%baza]] = copie[j]
         i+=1
 
+
+def shellSort(lista):
+    lungime = len(lista)
+    gap=lungime//2
+    while gap>0:
+        for i in range(gap, lungime):
+            for j in range(i-gap,-1,-gap):
+                if lista[j+gap]<lista[j]:
+                    lista[j+gap],lista[j]=lista[j],lista[j+gap]
+                else:
+                    break
+        gap//=2
+
 def findSwap(inc,lungime,lista,gap):
     for i in range(inc,lungime):
         if lista[i-gap]>lista[i] and i-gap>=0:
@@ -79,18 +92,7 @@ def shellSort2(lista):
         findSwap(gap,lungime,lista,gap)
         gap//=2
 
-
-def shellSort(lista):
-    lungime = len(lista)
-    gap=lungime//2
-    while gap>0:
-        for i in range(gap, lungime):
-            for j in range(i-gap,-1,-gap):
-                if lista[j+gap]<lista[j]:
-                    lista[j+gap],lista[j]=lista[j],lista[j+gap]
-                else:
-                    break
-        gap//=2
+#Varianta mai neeficienta
 
 
 def heapify(lista, n, i):
@@ -130,3 +132,5 @@ def heapSort2(lista,nr_elem):
         if lista[0]!=lista[nr_elem-1]:
             lista[0],lista[nr_elem-1]=lista[nr_elem-1],lista[0]
         nr_elem-=1
+
+#Varianta mai neeficienta
