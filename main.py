@@ -2,7 +2,7 @@ import sorting
 import random
 import time
 with open('input.txt') as f:
-    nr_teste = int(f.readline())
+    nr_teste = int(f.readline().split()[0])
     for i in range(nr_teste):
         test = f.readline().split()
         nr_max = int(test[0])
