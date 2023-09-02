@@ -20,7 +20,7 @@ There are three extra comparisons:
 - Language: Python 3.10
 - IDE: PyCharm 2022.2.5
 
-## The files
+## The input format
 
 The input files for [main.py](main.py) and [iterative_vs_recursive.py]([iterative_vs_recursive.py) should look like this:
 ```
@@ -40,7 +40,9 @@ The input files for [radix_binary_operations.py](radix_binary_operations.py) and
 .
 ```
 >[!NOTE]
->For the [input_radix_binary.txt](input_radix_binary.txt) file, the bases are only powers of 2, because there are binary operations.
+>For the [input_radix_binary.txt](input_radix_binary.txt) file, the bases are only powers of 2 because there are binary operations.
+
+## The files
 
 - the [sorting.py](sorting.py) file contains the algorithms(as functions) used in this projects;
 - the [input_main.txt](input_main.txt) file contains the input needed in the algorithms. The input should be like this:
