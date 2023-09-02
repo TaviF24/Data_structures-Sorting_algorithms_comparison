@@ -22,7 +22,7 @@ There are three extra comparisons:
 
 ## The input format
 
-The input files for [main.py](main.py) and [iterative_vs_recursive.py]([iterative_vs_recursive.py) should look like this:
+The input files for [main.py](main.py) and [iterative_vs_recursive.py](iterative_vs_recursive.py) should look like this:
 ```
 #    nr of tests
 # #  test_1 : max_nr  nr_of_elements
