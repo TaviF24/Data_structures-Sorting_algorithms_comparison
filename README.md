@@ -34,21 +34,19 @@ The input files for [radix_binary_operations.py](radix_binary_operations.py) and
 ```
 # #  max_nr  nr_of_elements
 #    the base (you can add/remove without modifing other line)
-#
 .
 .
 .
 ```
 
->[!NOTE]
->For the  
-
-- [sorting.py](sorting.py) file contains the algorithms(as functions) used in this projects
-- [input_main.txt](input_main.txt) file contains the input needed in the algorithms. The input should be like this:
+- the [sorting.py](sorting.py) file contains the algorithms(as functions) used in this projects
+- the [input_main.txt](input_main.txt) file contains the input needed in the algorithms. The input should be like this:
   ```
   2          //number of tests
   10 10000   //maximum_number  number_of_elements
   1000 1000
   ```
-- [main.py](main.py) file has the main code which takes the *input_main.txt* file, the *sorting.py* file and starts the comparison
+- the [main.py](main.py) file has the main code which takes the *input_main.txt* file, the *sorting.py* file and starts the comparison
+- the [radix_binary_operations.py](radix_binary_operations.py) and [radix_sort_base_test.py](radix_sort_base_test.py) files are the two extra comparisons, with their input files [input_radix_binary.py](input_radix_binary.py) and [input_radix_base_test.py](input_radix_base_test.py)
+- the [Sortari_SD.pptx](Sortari_SD.pptx) is a PowerPoint file in which I put all the final results
 
