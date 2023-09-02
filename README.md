@@ -63,5 +63,5 @@ The input files for [radix_binary_operations.py](radix_binary_operations.py) and
   64
   128
   ```
-- [Sortari_SD.pptx](Sortari_SD.pptx) is a PowerPoint file in which I put all the final results.
+- [Sortari-SD.pptx](Sortari-SD.pptx) is a PowerPoint file in which I put all the final results.
 
