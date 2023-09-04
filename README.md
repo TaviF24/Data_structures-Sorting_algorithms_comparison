@@ -9,6 +9,7 @@ The algorithms and their complexities are:
 3. **Shell Sort**: O(n<sup>2</sup>)
 4. **Counting Sort**: O(n + k), where k = the maximum number
 5. **Heap Sort**: O(n logn)
+6. **Python built-in sorting algorithm**
 
 There are three extra comparisons:
 - Radix Sort in different bases;
